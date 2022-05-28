@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Compose</string>
+    <string name="welcome">Welcome</string>
+    <string name="choose_level">Выберите уровень</string>
+    <string name="test">Тест</string>
+    <string name="easy">Легкий</string>
+    <string name="medium">Средний</string>
+    <string name="hard">Сложный</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
