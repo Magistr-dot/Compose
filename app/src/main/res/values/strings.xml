@@ -9,4 +9,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="percent">Правильных ответов %</string>
+    <string name="game_over">Game Over</string>
+    <string name="you_need_right_answers">Необходимое количество правильных ответов: %s</string>
+    <string name="Clear">Понятно</string>
+    <string name="rules">Правила игры:</string>
+    <string name="name_game">Состав числа</string>
+    <string name="you_score">Ваш счет: %s</string>
+    <string name="need_percent">Необходимый процент правильных ответов: %s</string>
+    <string name="you_percent">Процент правильных ответов: %s</string>
+    <string name="retry">Попробовать снова</string>
 </resources>

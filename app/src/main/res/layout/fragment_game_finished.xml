@@ -1,61 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:orientation="vertical"
-    tools:context=".presentation.ChooseLevelFragment">
+    android:background="@android:color/background_light"
+    tools:context=".presentation.GameFinishedFragment">
+
+    <ImageView
+        android:id="@+id/result"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="50dp"
+        android:contentDescription="@string/game_over"
+        app:layout_constraintBottom_toTopOf="@+id/tv_required_answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/good_result" />
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_required_answers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginStart="10dp"
-        android:text="@string/choose_level"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="@string/you_need_right_answers"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_score_answers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_score_answers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/you_score"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_required_percentage"
+        app:layout_constraintEnd_toEndOf="@+id/tv_required_answers"
+        app:layout_constraintStart_toStartOf="@id/tv_required_answers"
+        app:layout_constraintTop_toBottomOf="@id/tv_required_answers" />
+
+    <TextView
+        android:id="@+id/tv_required_percentage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/need_percent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_score_percentage"
+        app:layout_constraintEnd_toEndOf="@id/tv_required_answers"
+        app:layout_constraintStart_toStartOf="@id/tv_required_answers"
+        app:layout_constraintTop_toBottomOf="@id/tv_score_answers"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_score_percentage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/you_percent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_required_answers"
+        app:layout_constraintStart_toStartOf="@id/tv_required_answers"
+        app:layout_constraintTop_toBottomOf="@id/tv_required_percentage" />
 
     <Button
-        android:id="@+id/button_level_test"
+        android:id="@+id/button_retry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/test" />
-
-    <Button
-        android:id="@+id/button_level_easy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:backgroundTint="@android:color/holo_green_light"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/easy" />
-
-    <Button
-        android:id="@+id/button_level_normal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:backgroundTint="@android:color/holo_orange_light"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/medium" />
-
-    <Button
-        android:id="@+id/button_level_hard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="@string/hard" />
+        android:text="@string/retry"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
