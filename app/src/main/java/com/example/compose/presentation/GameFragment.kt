@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.compose.R
 import com.example.compose.databinding.FragmentGameBinding
 import com.example.compose.domain.entity.Level
@@ -12,7 +14,23 @@ import com.example.compose.domain.entity.Level
 class GameFragment : Fragment() {
 
     private lateinit var level: Level
+    private val viewModel by lazy {
+        ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+        )[GameViewModel::class.java]
+    }
 
+    private val tvOptions by lazy {
+        mutableListOf<TextView>().apply {
+            add(binding.tvOption1)
+            add(binding.tvOption2)
+            add(binding.tvOption3)
+            add(binding.tvOption4)
+            add(binding.tvOption5)
+            add(binding.tvOption6)
+        }
+    }
 
     private var _binding: FragmentGameBinding? = null
     private val binding: FragmentGameBinding
@@ -29,14 +47,14 @@ class GameFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         parseArgs()
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvOption1.setOnClickListener {
-            launchFinishedFragment("weq")
-        }
+        observeViewModel()
     }
+
 
     private fun parseArgs() {
         requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
@@ -60,6 +78,15 @@ class GameFragment : Fragment() {
                 arguments = Bundle().apply {
                     putParcelable(KEY_LEVEL, level)
                 }
+            }
+        }
+    }
+    private fun observeViewModel(){
+        viewModel.question.observe(viewLifecycleOwner){
+            binding.tvSum.text = it.sum.toString()
+            binding.tvLeftNumber.text = it.visibleNumber.toString()
+            for (i in 0 until tvOptions.size) {
+                tvOptions[i].text = it.option[i].toString()
             }
         }
     }
