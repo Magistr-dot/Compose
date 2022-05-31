@@ -63,10 +63,11 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private var countOfQuestion = 0
 
 
-    private fun startGame(level: Level) {
+    fun startGame(level: Level) {
         gameSettings(level)
         generateQuestion()
         startTimer()
+        updateProgress()
     }
 
     fun getAnswer(number: Int) {
@@ -88,7 +89,11 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun calculatePercentOfRightAnswers(): Int {
-        return ((countOfRightAnswers / countOfQuestion.toDouble()) * 100).toInt()
+        return if (countOfRightAnswers == 0){
+            0
+        } else {
+            ((countOfRightAnswers / countOfQuestion.toDouble()) * 100).toInt()
+        }
     }
 
     private fun checkAnswer(number: Int) {
@@ -100,9 +105,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun gameSettings(level: Level) {
-        _minPercent.value = gameSettings.minPercentRightAnswer
         this.level = level
         this.gameSettings = getGameSettingsUseCase(level)
+        _minPercent.value = gameSettings.minPercentRightAnswer
     }
 
     private fun startTimer() {

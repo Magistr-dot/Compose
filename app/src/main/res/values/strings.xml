@@ -6,9 +6,7 @@
     <string name="easy">Легкий</string>
     <string name="medium">Средний</string>
     <string name="hard">Сложный</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="percent">Правильных ответов %</string>
+    <string name="percent">Правильных ответов: %s (минимум %s)</string>
     <string name="game_over">Game Over</string>
     <string name="you_need_right_answers">Необходимое количество правильных ответов: %s</string>
     <string name="Clear">Понятно</string>
