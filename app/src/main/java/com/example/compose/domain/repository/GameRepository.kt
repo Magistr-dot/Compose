@@ -7,9 +7,10 @@ import com.example.compose.domain.entity.Question
 interface GameRepository {
 
     fun generateQuestion(
-        maxSumValue:Int,
-        countOfOptions:Int
+        maxSumValue: Int,
+        countOfOptions: Int
     ): Question
+
     fun getGameSettings(level: Level): GameSettings
 
 }

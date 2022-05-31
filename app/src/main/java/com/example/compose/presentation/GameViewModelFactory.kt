@@ -5,12 +5,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.compose.domain.entity.Level
 
+
 class GameViewModelFactory(
     private val level: Level,
     private val application: Application
 ) : ViewModelProvider.Factory {
 
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    @Suppress("UNCHECKED_CAST")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+
         if (modelClass.isAssignableFrom(GameViewModel::class.java)) {
             return GameViewModel(application, level) as T
         }

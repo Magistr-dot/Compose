@@ -9,7 +9,6 @@ class GenerateQuestions(
 
     operator fun invoke(maxSumValue: Int): Question {
         return repository.generateQuestion(maxSumValue, COUNT_OF_OPTION)
-
     }
 
     private companion object {

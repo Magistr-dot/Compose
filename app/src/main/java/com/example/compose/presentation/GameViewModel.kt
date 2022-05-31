@@ -1,9 +1,7 @@
 package com.example.compose.presentation
 
 import android.app.Application
-import android.content.Context
 import android.os.CountDownTimer
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,7 +22,6 @@ class GameViewModel(
     private val repository = GameRepositoryImpl
 
     private lateinit var gameSettings: GameSettings
-
 
     private val generateQuestionsUseCase = GenerateQuestions(repository)
     private val getGameSettingsUseCase = GetGameSettings(repository)
@@ -130,7 +127,6 @@ class GameViewModel(
             }
         }
         timer.start()
-
     }
 
     private fun generateQuestion() {
