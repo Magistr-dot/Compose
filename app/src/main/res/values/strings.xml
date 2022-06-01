@@ -9,7 +9,7 @@
     <string name="percent">Правильных ответов: %s (минимум %s)</string>
     <string name="game_over">Game Over</string>
     <string name="you_need_right_answers">Необходимое количество правильных ответов: %s</string>
-    <string name="Clear">Понятно</string>
+    <string name="clear">Понятно</string>
     <string name="rules">Правила игры:</string>
     <string name="name_game">Состав числа</string>
     <string name="you_score">Ваш счет: %s</string>

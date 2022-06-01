@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.compose.R
 import com.example.compose.databinding.FragmentGameFinishedBinding
 
 class GameFinishedFragment : Fragment() {
@@ -29,47 +28,7 @@ class GameFinishedFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupClickListener()
-        bindViews()
-    }
-
-    private fun bindViews() {
-        with(binding) {
-            result.setImageResource(getResId())
-            with(args) {
-                tvRequiredAnswers.text = String.format(
-                    getString(R.string.you_need_right_answers),
-                    gameResult.gameSettings.minCountRightAnswer
-                )
-                tvScoreAnswers.text = String.format(
-                    getString(R.string.you_score),
-                    gameResult.countRightAnswer
-                )
-                tvRequiredPercentage.text = String.format(
-                    getString(R.string.need_percent),
-                    gameResult.gameSettings.minPercentRightAnswer
-                )
-                tvScorePercentage.text = String.format(
-                    getString(R.string.you_percent),
-                    calculatePercentOfRightAnswers()
-                )
-            }
-        }
-    }
-
-    private fun calculatePercentOfRightAnswers() = with(args.gameResult) {
-        if (countOfQuestion == 0) {
-            0
-        } else {
-            ((countRightAnswer / countOfQuestion.toDouble()) * 100).toInt()
-        }
-    }
-
-    private fun getResId(): Int {
-        return if (args.gameResult.win) {
-            R.drawable.good_result
-        } else {
-            R.drawable.bad_result
-        }
+        binding.gameResult = args.gameResult
     }
 
     private fun setupClickListener() {

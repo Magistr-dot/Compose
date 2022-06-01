@@ -5,9 +5,9 @@
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/activity_main.xml" value="0.55" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_choose_level.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_game.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_game_finished.xml" value="0.47005444646098005" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_welcome.xml" value="0.4338358458961474" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_game.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_game_finished.xml" value="0.4445676274944568" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Compose/app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
       </map>
     </option>
   </component>
